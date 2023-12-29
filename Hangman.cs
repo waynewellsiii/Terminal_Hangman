@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security.Permissions;
 using System.Text;
@@ -18,7 +19,7 @@ namespace Terminal_Hangman
     {
         private static System.Random random = new System.Random();
 
-        private static string HangmanFilesDirectoryPath = Application.persistentDataPath + "/Resources/";
+        private static string HangmanFilesDirectoryPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources");
 
         private static HashSet<char> GuessedCharacters = new HashSet<char>();
 
